@@ -1,9 +1,5 @@
 name: Deploy HTML Files to AppService - CMST385
-run: |
-  pwd
-  ls -la
-  echo "---- project1 ----"
-  ls -la ./project1
+
 on:
   push:
     branches:
@@ -15,13 +11,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Show files that will be deployed
+        run: |
+          pwd
+          ls -la
+          echo "---- project1 ----"
+          ls -la ./project1
+
       - name: Deploy project1 to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          # MUST match the Site/App name in your Publish Settings exactly
-          app-name: 'CMST385-jdonkor2'
+          app-name: 'CMST385-jdonkor2'          # EXACT from your Aloft card
           slot-name: 'production'
-          # MUST match your repo secret name in Settings → Secrets and variables → Actions
           publish-profile: ${{ secrets.AppServiceCMST385 }}
-          # Deploy only the project1 folder as the web root
-          package: ./project1
+          package: ./project1                   # because index.html is in project1/
