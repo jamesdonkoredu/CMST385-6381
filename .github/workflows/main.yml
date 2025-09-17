@@ -2,8 +2,7 @@ name: Deploy HTML Files to AppService - CMST385
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   build-and-deploy:
@@ -21,7 +20,7 @@ jobs:
       - name: Deploy project1 to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'CMST385-jdonkor2'          # EXACT from your Aloft card
+          app-name: 'CMST385-jdonkor2'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AppServiceCMST385 }}
-          package: ./project1                   # because index.html is in project1/
+          publish-profile: ${{ secrets.APPSERVICECMST385 }}   # <-- your ALL-CAPS secret
+          package: ./project1
