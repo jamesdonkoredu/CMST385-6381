@@ -9,18 +9,10 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Show files that will be deployed
-        run: |
-          pwd
-          ls -la
-          echo "---- project1 ----"
-          ls -la ./project1
-
       - name: Deploy project1 to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'CMST385-jdonkor2'
+          app-name: 'CMST385-jdonkor2'              # EXACT from your XML
           slot-name: 'production'
-          publish-profile: ${{ secrets.APPSERVICECMST385 }}   # <-- your ALL-CAPS secret
-          package: ./project1
+          publish-profile: ${{ secrets.APPSERVICECMST385 }}  # use your exact secret name
+          package: ./project1                        # because index.html is in project1/
