@@ -1,5 +1,9 @@
 name: Deploy HTML Files to AppService - CMST385
-
+run: |
+  pwd
+  ls -la
+  echo "---- project1 ----"
+  ls -la ./project1
 on:
   push:
     branches:
