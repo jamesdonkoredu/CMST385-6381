@@ -12,7 +12,7 @@ jobs:
       - name: Deploy project1 to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'CMST385-jdonkor2'              # EXACT from your XML
+          app-name: 'CMST385-jdonkor2'             
           slot-name: 'production'
-          publish-profile: ${{ secrets.APPSERVICECMST385 }}  # use your exact secret name
-          package: ./project1                        # because index.html is in project1/
+          publish-profile: ${{ secrets.APPSERVICECMST385 }}  
+          package: ./project1                        
