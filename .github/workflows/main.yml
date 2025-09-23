@@ -3,16 +3,23 @@ name: Deploy HTML Files to AppService - CMST385
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest  
     steps:
       - uses: actions/checkout@v4
-      - name: Deploy project1 to Azure Web App
-        uses: azure/webapps-deploy@v2
+
+    
+      - name: Create root index redirect 
+        run: |
+          echo '<!doctype html><meta http-equiv="refresh" content="0; url=/project1/">' > index.html
+
+      - name: Deploy entire repo to Azure Web App
+        uses: azure/webapps-deploy@v3
         with:
-          app-name: 'CMST385-jdonkor2'             
-          slot-name: 'production'
-          publish-profile: ${{ secrets.APPSERVICECMST385 }}  
-          package: ./project1                        
+          app-name: CMST385-jdonkor2
+          slot-name: production
+          publish-profile: ${{ secrets.APPSERVICECMST385 }}
+          package: .
