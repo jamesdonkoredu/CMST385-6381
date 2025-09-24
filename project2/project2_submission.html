@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- meta tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Project Proposal for Remote Rehearse — a remote rehearsal website.">
+  <title>Project Proposal — Remote Rehearse</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; line-height: 1.6; margin: 2rem; color: #222; }
+    header, section { max-width: 980px; margin: 0 auto 2.5rem; }
+    img { max-width: 100%; height: auto; border-radius: 6px; }
+    nav a { margin-right: 1rem; }
+    .small { font-size: 0.95rem; color: #555; }
+    hr { margin: 2rem 0; }
+    code { background:#f6f8fa; padding: 0 .25rem; border-radius: 4px; }
+    strong { font-weight: inherit; }
+    em { font-style: inherit; }
+  </style>
+</head>
+<body id="top">
+  <header>
+    <h1>Project Proposal: Remote Rehearse</h1>
+    <nav class="small">
+      <a href="#concept">Project Concept</a>
+      <a href="#sitemap">Site Map</a>
+      <a href="#wireframe">Wireframe</a>
+      <a href="#resources">Project Resources</a>
+      <a href="#top">Back to Top</a>
+    </nav>
+    <hr>
+  </header>
+
+  <!--PROJECT CONCEPT -->
+  <section id="concept">
+    <h2>Project Concept</h2>
+
+    <h3>Website Type</h3>
+    <p>
+      Remote Rehearse is a virtual rehearsal hub that enables musicians to practice assigned or uploaded scores online, track their progress, and receive <em>feedback</em> from directors. It supports flexible <em>practice</em> and measurable improvement.
+    </p>
+
+    <h3>Objectives and Goals</h3>
+    <ol>
+      <li><strong>Provide</strong> rehearsal flexibility so singers can practice anytime, anywhere.</li>
+      <li><strong>Improve</strong> accuracy and confidence through scoring systems that analyze pitch, rhythm, and timing.</li>
+      <li>Assist choir directors with tools to monitor member progress and set practice goals.</li>
+      <li>Build community by connecting singers in shared rehearsal groups.</li>
+    </ol>
+
+    <h3>Intended Audience</h3>
+    <ul>
+      <li>Choir members who want to practice independently and measure improvement.</li>
+      <li>Choir directors who need an efficient way to assign music and track participation.</li>
+      <li>Instrumentalists rehearsing in groups that cannot meet regularly.</li>
+      <li>Music students learning harmony, rhythm, and ear training.</li>
+    </ul>
+
+    <h4>Key Features</h4>
+    <p>
+      <u>Planned features</u> include a score library, voice part selection for SATB, a practice mode with a transport bar and mute or solo options, a scoring system that provides feedback on pitch and rhythm alignment, a dashboard for goals and upcoming rehearsals, and director tools for assignment and monitoring. A future enhancement includes integration with the Zoom API for live virtual rehearsals, where MIDI playback is gradually replaced with recorded parts as users improve.
+    </p>
+  </section>
+
+  <hr>
+
+  <!--SITE MAP -->
+  <section id="sitemap">
+    <h2>Site Map</h2>
+    <p class="small">Home/Dashboard, Score Library, Practice, Settings, Progress Report.</p>
+    <img src="imgs/remote-rehearse-sitemap.png" alt="Remote Rehearse site map diagram">
+  </section>
+
+  <hr>
+
+  <!--WIREFRAME -->
+  <section id="wireframe">
+    <h2>Wireframe (Homepage)</h2>
+    <p class="small">Homepage design</p>
+    <img src="imgs/remote-rehearse-home-wireframe.png" alt="Remote Rehearse homepage wireframe">
+  
+  </section>
+
+  <hr>
+
+  <!--PROJECT RESOURCES -->
+  <section id="resources">
+    <h2>Project Resources</h2>
+    <h3>Primary reference</h3>
+    <p>
+      A tutorial on client-side audio playback and analysis using the Web Audio API will guide development of the practice player and metering. The reference will inform on transport controls, gain nodes for mute or solo, and timing cues for score-synced playback. It will also help structure a minimal scoring prototype later. Many tutorials are available on Youtube. 
+    </p>
+    <h4>Additional resources</h4>
+    <ul>
+      <li>MusicXML format overview and parsing examples.</li>
+      <li>Noteflight UI for understanding user experience in a tried-and-true music notation software.</li>
+    </ul>
+  </section>
+
+  <footer class="small" style="max-width:980px;margin:2rem auto;">
+    <p><a href="#top">Back to Top</a> • File: <code>project2_submission.html</code></p>
+    <p class="small">
+      External reference:
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API" target="_blank" rel="noopener noreferrer">MDN Web Audio API Guide</a>
+    </p>
+    <p class="small">
+      External reference:
+      <a href="https://www.noteflight.com/" target="_blank" rel="noopener noreferrer">NoteFlight web page</a>
+    </p>
+  </footer>
+</body>
+</html>
