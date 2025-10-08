@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RemoteRehearse — Home</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+   
+    .panel--notifications .notif-quote{
+      margin: 4px 0 14px; padding-left: 12px; border-left: 3px solid #e5e7eb;
+      color:#374151; font-style: italic; line-height:1.35;
+    }
+    .panel--notifications .notif-quote .quote-author{
+      display:block; margin-top:4px; color:#6b7280; font-size:13px; font-style:normal;
+    }
+  </style>
+</head>
+<body class="home-only">
+
+  <!-- ================= EMBEDDED VERSION ================= -->
+  <div class="embedded-content">
+    <div class="home-wrapper">
+      <header class="header">
+        <div class="group-info">
+          <div class="app-title">RemoteRehearse</div>
+          <div class="members">
+            <span class="member-avatar" data-group="UMD Acapella"     title="UMD Acapella">A</span>
+            <span class="member-avatar" data-group="Blue Note Quintet" title="Blue Note Quintet">B</span>
+            <span class="member-avatar" data-group="String Society"    title="String Society">C</span>
+            <span class="member-count">+1</span>
+          </div>
+        </div>
+        <div class="active-group">Active Group: UMD Acapella</div>
+        <button class="search-btn">🔍 Search</button>
+      </header>
+
+      <section class="center-grid">
+        <!-- ============== NOTIFICATIONS ============== -->
+        <section class="panel panel--notifications" aria-labelledby="notifTitle">
+          <div class="panel-header">
+            <h2 id="notifTitle">Notifications</h2>
+            <span class="panel-sub">Today</span>
+          </div>
+
+          <!-- quote  -->
+          <blockquote class="notif-quote">
+            “Some people have lives; some people have music.”
+            <span class="quote-author">— John Green</span>
+          </blockquote>
+
+          <div class="notify-list">
+            <div class="schedule-item green" id="ave-maria">
+              <div>
+                <div class="schedule-title">Ave Maria SATB Rehearsal</div>
+                <div class="schedule-meta">Assigned by: Will Williams</div>
+                <div class="schedule-time">10:00pm–11:30pm</div>
+              </div>
+            </div>
+
+            <div class="schedule-item blue">
+              <div>
+                <div class="schedule-title">Sopranos Only UMD Acapella</div>
+                <div class="schedule-meta">Private</div>
+                <div class="schedule-time">12:30pm–1:00pm</div>
+              </div>
+            </div>
+
+            <div class="schedule-item green" id="beethoven">
+              <div>
+                <div class="schedule-title">Beethoven’s 5th Due Date</div>
+                <div class="schedule-meta">Assigned by: James Deakon</div>
+                <div class="schedule-time">9:00pm</div>
+              </div>
+            </div>
+
+            <div class="schedule-item blue" id="claire">
+              <div>
+                <div class="schedule-title">Audition for Treblemakers</div>
+                <div class="schedule-meta">Professor Whitlock</div>
+                <div class="schedule-time">5:30pm–6:00pm</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============== CALENDAR ============== -->
+        <section class="panel" aria-labelledby="calTitle">
+          <div class="panel-header">
+            <h2 id="calTitle">Calendar</h2>
+            <span class="panel-sub month-label">JUNE</span>
+          </div>
+
+          <div class="calendar">
+            <div class="calendar-grid">
+              <div class="calendar-day-header">S</div><div class="calendar-day-header">M</div><div class="calendar-day-header">T</div><div class="calendar-day-header">W</div><div class="calendar-day-header">T</div><div class="calendar-day-header">F</div><div class="calendar-day-header">S</div>
+              <div class="calendar-day inactive"></div><div class="calendar-day">1</div><div class="calendar-day">2</div><div class="calendar-day">3</div><div class="calendar-day">4</div><div class="calendar-day">5</div><div class="calendar-day">6</div>
+              <div class="calendar-day">7</div><div class="calendar-day">8</div><div class="calendar-day">9</div><div class="calendar-day">10</div><div class="calendar-day">11</div><div class="calendar-day">12</div><div class="calendar-day inactive">13</div>
+              <div class="calendar-day">14</div><div class="calendar-day">15</div><div class="calendar-day">16</div><div class="calendar-day">17</div><div class="calendar-day">18</div><div class="calendar-day">19</div><div class="calendar-day inactive">20</div>
+              <div class="calendar-day">21</div><div class="calendar-day today">22</div><div class="calendar-day">23</div><div class="calendar-day">24</div><div class="calendar-day">25</div><div class="calendar-day">26</div><div class="calendar-day inactive">27</div>
+              <div class="calendar-day">28</div><div class="calendar-day">29</div><div class="calendar-day">30</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============== STREAKS ============== -->
+        <section class="panel streaks" aria-labelledby="streaksTitle">
+          <div class="panel-header">
+            <h2 id="streaksTitle">Streaks</h2>
+            <span class="panel-sub">Overall</span>
+          </div>
+
+          <div class="streaks-body">
+            <div class="streak-row">
+              <div>
+                <div class="streak-label">Daily</div>
+                <div class="streak-value">80%</div>
+                <div class="streak-note">Daily streak: 144 days</div>
+              </div>
+              <div class="streak-icon">⏱️</div>
+            </div>
+
+            <div class="streak-row">
+              <div>
+                <div class="streak-label">Weekly</div>
+                <div class="streak-value">4/8</div>
+                <div class="streak-note">Weekly streak: 20 weeks</div>
+              </div>
+              <div class="streak-icon">🏆</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============== SCORES ============== -->
+        <section class="panel" aria-labelledby="scoresTitle">
+          <div class="panel-header">
+            <h2 id="scoresTitle">Scores</h2>
+            <button class="add-session-btn" aria-label="Add score">+</button>
+          </div>
+
+          <div class="session-list">
+            <div class="session-item"><span>Ave Maria SATB</span><span class="info-icon">ⓘ</span></div>
+            <div class="session-item selected"><span>Beethoven’s 5th: Piano</span></div>
+            <div class="session-item"><span>Donna Lee — Charlie Parker</span><span class="info-icon">ⓘ</span></div>
+            <div class="session-item"><span>Toto Cover Band Score</span></div>
+            <div class="session-item"><span>Wedding Setlist</span></div>
+            <div class="session-item"><span>Mars — Holst (Clarksville MS)</span></div>
+            <div class="session-item"><span>Blue in Green — Miles (Eb)</span></div>
+          </div>
+
+          <a class="practice-btn" href="practice.html?score=beethoven">▶ Practice</a>
+        </section>
+      </section>
+    </div>
+  </div>
+
+  <!-- ================= STANDALONE SHELL (when opening home.html directly) ================= -->
+  <div class="standalone-shell">
+    <aside class="sidebar">
+      <div class="nav-header">
+        Navigation <button class="color-picker" title="Theme color"></button>
+      </div>
+
+      <div class="nav-section">
+        <a class="nav-item active" href="home.html"    target="_self" aria-current="page"><span>📊</span><span>Dashboard</span><span class="badge">3</span></a>
+        <a class="nav-item"        href="library.html" target="_self"><span>📁</span><span>Score Library</span></a>
+        <a class="nav-item"        href="practice.html?score=ave-maria" target="_self"><span>📁</span><span>Practice</span></a>
+        <a class="nav-item"        href="settings.html" target="_self"><span>⚙️</span><span>Settings</span></a>
+
+<a class="nav-item" href="about.html" target="_self">
+  <span aria-hidden="true">ℹ️</span><span>About</span>
+</a>
+
+
+      </div>
+
+      <div class="recents-header">Recents</div>
+      <div class="nav-section">
+     
+        <a class="nav-item" href="practice.html?score=ave-maria" target="_self"><span>📁</span><span>Ave Maria SATB</span></a>
+        <a class="nav-item" href="practice.html?score=claire"     target="_self"><span>📁</span><span>Claire de Lune - Piano Recital</span></a>
+        <a class="nav-item" href="practice.html?score=beethoven"  target="_self"><span>📁</span><span>Beethoven's 5th</span></a>
+      </div>
+
+      <div class="calibration-tooltip">
+        Try our voice/instrument calibration engine!
+        <div class="calibration-icon"></div>
+      </div>
+
+      <div class="user-profile">
+        <div class="user-avatar"></div>
+        <div><div style="font-weight:600; font-size:14px;">Blythe Schulte</div></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+     
+      <div class="home-wrapper"></div>
+    </main>
+   
+  </div>
+
+  <!-- ================= Scripts ================= -->
+  <script>
+
+    if (window.top === window.self) {
+      document.body.classList.add('standalone');
+      const embedded = document.querySelector('.embedded-content .home-wrapper');
+      const target   = document.querySelector('.standalone-shell .home-wrapper');
+      if (embedded && target) target.innerHTML = embedded.innerHTML;
+    }
+  </script>
+
+  <script>
+
+    (function(){
+      const KEY = 'rr_active_group';
+      const groupEl = document.querySelector('.active-group');
+      const avatars = document.querySelectorAll('.member-avatar[data-group]');
+      const label = (name) => 'Active Group: ' + name;
+
+      const stored = localStorage.getItem(KEY);
+      if (stored && groupEl) groupEl.textContent = label(stored);
+
+      avatars.forEach(av => {
+        av.style.cursor = 'pointer';
+        av.addEventListener('click', () => {
+          const name = av.dataset.group;
+          localStorage.setItem(KEY, name);
+          if (groupEl) groupEl.textContent = label(name);
+          av.animate([{transform:'scale(1)'},{transform:'scale(1.1)'},{transform:'scale(1)'}], {duration:180});
+        });
+      });
+
+      window.addEventListener('storage', (e) => {
+        if (e.key === KEY && groupEl) groupEl.textContent = label(e.newValue || 'UMD Acapella');
+      });
+    })();
+  </script>
+</body>
+</html>

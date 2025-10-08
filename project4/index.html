@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RemoteRehearse — Layout</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <div class="container no-transport">
+
+    <!-- Left Sidebar -->
+    <aside class="sidebar">
+      <div class="nav-header">
+        Navigation
+        <button class="color-picker" title="Theme color"></button>
+      </div>
+
+      <div class="nav-section">
+        <button class="nav-item active" data-page="home.html">
+          <span>📊</span><span>Dashboard</span><span class="badge">3</span>
+        </button>
+        <button class="nav-item" data-page="library.html">
+          <span>📁</span><span>Score Library</span>
+        </button>
+        <button class="nav-item" data-page="practice.html">
+          <span>📁</span><span>Practice</span>
+        </button>
+        <button class="nav-item" data-page="settings.html">
+          <span>⚙️</span><span>Settings</span>
+        </button>
+          <a class="nav-item" href="about.html" target="_self">
+          <span aria-hidden="true"></span><span>About</span>
+          </a>
+
+      </div>
+
+      <!-- Left sidebar → Recents -->
+<div class="nav-section">
+  <button class="nav-item" data-page="practice.html#ave-maria">
+    <span>📁</span><span>Ave Maria SATB</span>
+  </button>
+  <button class="nav-item" data-page="practice.html#claire">
+    <span>📁</span><span>Claire de Lune - Piano Recital</span>
+  </button>
+  <button class="nav-item" data-page="practice.html#beethoven">
+    <span>📁</span><span>Beethoven's 5th</span>
+  </button>
+</div>
+
+
+      <div class="calibration-tooltip">
+        Try our voice/instrument calibration engine!
+        <div class="calibration-icon"></div>
+      </div>
+
+      <div class="user-profile">
+        <div class="user-avatar"></div>
+        <div>
+          <div style="font-weight: 600; font-size: 14px;">Blythe Schulte</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Frame -->
+    <main class="main-content">
+      <iframe id="content-frame" title="Content" src="home.html" loading="eager"></iframe>
+    </main>
+
+</div>
+
+
+ <script>
+
+  const frame = document.getElementById('content-frame');
+  const buttons = document.querySelectorAll('.nav-item[data-page]');
+
+  function setActiveByPage(page) {
+    buttons.forEach(b => {
+      const isActive = b.getAttribute('data-page') === page;
+      b.classList.toggle('active', isActive);
+      if (isActive) {
+        b.setAttribute('aria-current', 'page');   
+      } else {
+        b.removeAttribute('aria-current');
+      }
+    });
+  }
+
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const page = btn.getAttribute('data-page');
+      frame.src = page;
+      setActiveByPage(page);
+    });
+  });
+
+ 
+  frame.addEventListener('load', () => {
+    const url = new URL(frame.src, location.href);
+    const page = url.pathname.split('/').pop();   
+    setActiveByPage(page);
+  });
+
+  window.addEventListener('hashchange', () => {
+    if (location.hash) frame.contentWindow.location.hash = location.hash;
+  });
+
+
+  (function initActive() {
+    const initial = new URL(frame.getAttribute('src'), location.href)
+                      .pathname.split('/').pop();
+    setActiveByPage(initial);
+  })();
+</script>
+
+<script>
+  (function(){
+    const KEY = 'rr_active_group';
+    const groupEl = document.querySelector('.active-group');
+    const avatars = document.querySelectorAll('.member-avatar[data-group]');
+
+    function label(name){ return 'Active Group: ' + name; }
+
+
+    const stored = localStorage.getItem(KEY);
+    if (stored && groupEl) groupEl.textContent = label(stored);
+
+ 
+    avatars.forEach(av => {
+      av.style.cursor = 'pointer';
+      av.addEventListener('click', () => {
+        const name = av.dataset.group;
+        localStorage.setItem(KEY, name);
+        if (groupEl) groupEl.textContent = label(name);
+       
+        av.animate([{transform:'scale(1)'},{transform:'scale(1.1)'},{transform:'scale(1)'}], {duration:180});
+      });
+    });
+
+   
+    window.addEventListener('storage', (e) => {
+      if (e.key === KEY && groupEl) groupEl.textContent = label(e.newValue || 'UMD Acapella');
+    });
+  })();
+</script>
+
+
+</body>
+</html>

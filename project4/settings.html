@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RemoteRehearse — Settings</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+
+<body class="settings-only">
+  <!-- ================== EMBEDDED (iframe) VERSION ================== -->
+  <div class="embedded-content">
+    <div class="page-wrapper">
+      <header class="header">
+        <div class="group-info">
+          <div class="app-title">RemoteRehearse</div>
+          <div class="members">
+            <span class="member-avatar" data-group="UMD Acapella" title="UMD Acapella">A</span>
+            <span class="member-avatar" data-group="Blue Note Quintet" title="Blue Note Quintet">B</span>
+            <span class="member-avatar" data-group="String Society" title="String Society">C</span>
+            <span class="member-count">+1</span>
+          </div>
+        </div>
+        <div class="active-group">Active Group: UMD Acapella</div>
+        <button class="search-btn" type="button">Search</button>
+      </header>
+
+      <h1 class="section-title">Settings</h1>
+
+      <section class="settings-grid">
+        <!-- Metronome -->
+        <article class="s-card">
+          <div class="s-header">
+            <h3>Metronome</h3>
+            <small>Practice click preferences</small>
+          </div>
+          <div class="form-row">
+            <label class="field">
+              <span class="label">Volume</span>
+              <input type="range" min="0" max="100" value="72" aria-label="Metronome volume">
+            </label>
+
+            <label class="field">
+              <span class="label">Tempo (BPM)</span>
+              <input type="range" min="40" max="208" value="92" aria-label="Metronome tempo">
+            </label>
+
+            <label class="field">
+              <span class="label">Subdivision</span>
+              <select aria-label="Subdivision">
+                <option>Quarter (♩)</option>
+                <option>Eighths (♪)</option>
+                <option>Triplets</option>
+                <option>Sixteenths</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="label">Sound</span>
+              <select aria-label="Metronome sound">
+                <option>Woodblock</option>
+                <option>Click</option>
+                <option>Beeps</option>
+              </select>
+            </label>
+
+            <label class="switch">
+              <input type="checkbox" checked aria-label="1-bar count-in">
+              <span class="switch-track"><span class="switch-thumb"></span></span>
+              <span class="switch-label">Count-in (1 bar)</span>
+            </label>
+
+            <label class="switch">
+              <input type="checkbox" checked aria-label="Accent first beat">
+              <span class="switch-track"><span class="switch-thumb"></span></span>
+              <span class="switch-label">Accent first beat</span>
+            </label>
+          </div>
+        </article>
+
+        <!-- Practice -->
+        <article class="s-card">
+          <div class="s-header">
+            <h3>Practice</h3>
+            <small>Playback & input</small>
+          </div>
+          <div class="form-row">
+            <label class="field">
+              <span class="label">Auto-loop length</span>
+              <select aria-label="Auto-loop length">
+                <option>2 bars</option>
+                <option selected>4 bars</option>
+                <option>8 bars</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="label">Auto tempo ramp</span>
+              <select aria-label="Auto tempo ramp">
+                <option>Off</option>
+                <option selected>+3 BPM every loop</option>
+                <option>+5 BPM every loop</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="label">Microphone</span>
+              <select aria-label="Microphone">
+                <option selected>System default</option>
+                <option>USB Mic</option>
+                <option>Built-in Mic</option>
+              </select>
+            </label>
+          </div>
+        </article>
+
+        <!-- Account -->
+        <article class="s-card">
+          <div class="s-header">
+            <h3>Account</h3>
+            <small>Profile & security</small>
+          </div>
+          <div class="form-row">
+            <label class="field">
+              <span class="label">Display name</span>
+              <input type="text" value="Blythe Schulte"/>
+            </label>
+
+            <label class="field">
+              <span class="label">Email</span>
+              <input type="email" value="blythe@example.com"/>
+            </label>
+
+            <label class="field">
+              <span class="label">Password</span>
+              <input id="account-password" type="password" value="••••••••"/>
+            </label>
+
+            <div class="inline-actions">
+              <button class="btn btn-outline" type="button" id="toggle-password"
+                      aria-pressed="false" aria-controls="account-password">
+                View password
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Notifications -->
+        <article class="s-card">
+          <div class="s-header">
+            <h3>Notifications</h3>
+            <small>Alert method & schedule</small>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <span class="label">Alert method</span>
+              <div class="checkchips">
+                <label class="checkchip"><input type="checkbox" checked><span class="chip">Email</span></label>
+                <label class="checkchip"><input type="checkbox"><span class="chip">Text</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="notify-mode">
+            <input type="radio" name="alertmode" id="alert-urgency" checked>
+            <input type="radio" name="alertmode" id="alert-steady">
+
+            <div class="seg" role="tablist" aria-label="Alert style">
+              <label class="seg-item" for="alert-urgency" role="tab">Urgency-based</label>
+              <label class="seg-item" for="alert-steady" role="tab">Steady reminders</label>
+              <span class="seg-bg" aria-hidden="true"></span>
+            </div>
+
+            <div class="mode-panels">
+              <div class="mode mode-urgency" role="tabpanel" aria-labelledby="alert-urgency">
+                <div class="field">
+                  <span class="label">Notify me when an item turns…</span>
+                  <div class="checkchips">
+                    <label class="checkchip"><input type="checkbox" checked><span class="chip sev-red">Red (Urgent)</span></label>
+                    <label class="checkchip"><input type="checkbox" checked><span class="chip sev-yellow">Yellow (Warning)</span></label>
+                    <label class="checkchip"><input type="checkbox"><span class="chip sev-green">Green (Update)</span></label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mode mode-steady" role="tabpanel" aria-labelledby="alert-steady">
+                <div class="form-row">
+                  <label class="field">
+                    <span class="label">Frequency</span>
+                    <select aria-label="Reminder frequency">
+                      <option>Daily</option>
+                      <option selected>Weekly</option>
+                      <option>Bi-Weekly</option>
+                      <option>Monthly</option>
+                    </select>
+                  </label>
+                  <label class="field">
+                    <span class="label">Time</span>
+                    <select aria-label="Reminder time">
+                      <option>8:00 AM</option>
+                      <option selected>5:00 PM</option>
+                      <option>8:00 PM</option>
+                    </select>
+                  </label>
+                </div>
+
+                <div class="field">
+                  <span class="label">Days (for weekly)</span>
+                  <div class="checkchips days">
+                    <label class="checkchip"><input type="checkbox" checked><span class="chip">Mon</span></label>
+                    <label class="checkchip"><input type="checkbox"><span class="chip">Tue</span></label>
+                    <label class="checkchip"><input type="checkbox"><span class="chip">Wed</span></label>
+                    <label class="checkchip"><input type="checkbox" checked><span class="chip">Thu</span></label>
+                    <label class="checkchip"><input type="checkbox" checked><span class="chip">Fri</span></label>
+                    <label class="checkchip"><input type="checkbox"><span class="chip">Sat</span></label>
+                    <label class="checkchip"><input type="checkbox"><span class="chip">Sun</span></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </div>
+  </div>
+
+  <!-- ================== STANDALONE  ================== -->
+  <div class="standalone-shell">
+    <aside class="sidebar">
+      <div class="nav-header">
+        Navigation
+        <button class="color-picker" title="Theme color" type="button"></button>
+      </div>
+
+      <div class="nav-section">
+        <a class="nav-item" href="home.html"><span>📊</span><span>Dashboard</span><span class="badge">3</span></a>
+        <a class="nav-item" href="library.html"><span>📁</span><span>Score Library</span></a>
+        <a class="nav-item" href="practice.html"><span>📁</span><span>Practice</span></a>
+        <a class="nav-item active" aria-current="page" href="settings.html"><span>⚙️</span><span>Settings</span></a>
+                </button>
+          <a class="nav-item" href="about.html" target="_self">
+          <span aria-hidden="true">ℹ️</span><span>About</span>
+          </a>
+      </div>
+
+      <div class="recents-header">Recents</div>
+      <div class="nav-section">
+        <a class="nav-item" href="home.html#ave-maria"><span>📁</span><span>Ave Maria SATB</span></a>
+        <a class="nav-item" href="home.html#claire"><span>📁</span><span>Claire de Lune - Piano Recital</span></a>
+        <a class="nav-item" href="home.html#beethoven"><span>📁</span><span>Beethoven's 5th</span></a>
+      </div>
+
+      <div class="calibration-tooltip">
+        Try our voice/instrument calibration engine!
+        <div class="calibration-icon"></div>
+      </div>
+
+      <div class="user-profile">
+        <div class="user-avatar"></div>
+        <div>
+          <div style="font-weight:600;font-size:14px;">Blythe Schulte</div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+ 
+      <div class="page-wrapper"></div>
+    </main>
+  </div>
+
+  <!-- Standalone detect -->
+  <script>
+    if (window.top === window.self) {
+      document.body.classList.add('standalone');
+      const embedded = document.querySelector('.embedded-content .page-wrapper');
+      const target = document.querySelector('.standalone-shell .page-wrapper');
+      if (embedded && target) target.innerHTML = embedded.innerHTML;
+    }
+  </script>
+
+  <!-- Active Group sync  -->
+  <script>
+    (function(){
+      const KEY = 'rr_active_group';
+      const groupEl = document.querySelector('.active-group');
+      const avatars = document.querySelectorAll('.member-avatar[data-group]');
+      const label = (n) => 'Active Group: ' + n;
+
+      const stored = localStorage.getItem(KEY);
+      if (stored && groupEl) groupEl.textContent = label(stored);
+
+      avatars.forEach(av => {
+        av.style.cursor = 'pointer';
+        av.addEventListener('click', () => {
+          const n = av.dataset.group;
+          localStorage.setItem(KEY, n);
+          if (groupEl) groupEl.textContent = label(n);
+          av.animate(
+            [{transform:'scale(1)'},{transform:'scale(1.1)'},{transform:'scale(1)'}],
+            {duration:180}
+          );
+        });
+      });
+
+      window.addEventListener('storage', (e) => {
+        if (e.key === KEY && groupEl) {
+          groupEl.textContent = label(e.newValue || 'UMD Acapella');
+        }
+      });
+    })();
+  </script>
+
+  <!-- Password -->
+  <script>
+    (function(){
+      const input = document.getElementById('account-password');
+      const btn   = document.getElementById('toggle-password');
+      if (!input || !btn) return;
+
+      function toggle() {
+        const toText = input.type === 'password';
+        input.type = toText ? 'text' : 'password';
+        btn.textContent = toText ? 'Hide password' : 'View password';
+        btn.setAttribute('aria-pressed', String(toText));
+      }
+
+      btn.addEventListener('click', toggle);
+    })();
+  </script>
+</body>
+</html>

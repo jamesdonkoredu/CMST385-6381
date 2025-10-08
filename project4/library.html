@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RemoteRehearse — Score Library</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="library-only">
+
+  <!-- Embedded version -->
+  <div class="embedded-content">
+    <div class="page-wrapper">
+      <header class="header">
+        <div class="group-info">
+          <div class="app-title">RemoteRehearse</div>
+          <div class="members">
+            <span class="member-avatar" data-group="UMD Acapella" title="UMD Acapella">A</span>
+            <span class="member-avatar" data-group="Blue Note Quintet" title="Blue Note Quintet">B</span>
+            <span class="member-avatar" data-group="String Society" title="String Society">C</span>
+            <span class="member-count">+1</span>
+        </div>
+
+        </div>
+        <div class="active-group">Active Group: UMD Acapella</div>
+        <button class="search-btn">Search</button>
+      </header>
+
+      <h1 class="section-title">Scores Library</h1>
+
+      <div class="lib-toolbar">
+        <div class="lib-controls">
+          <label class="select"><span>Sort by</span><select><option>Title</option><option>Owner</option><option>Completion</option><option>Status</option></select></label>
+          <label class="select"><span>Show</span><select><option selected>10</option><option>25</option><option>50</option></select></label>
+        </div>
+        <form class="lib-search" role="search" onsubmit="return false;">
+          <input type="search" placeholder="Search" aria-label="Search scores"/><button type="submit" aria-label="Search">🔍</button>
+        </form>
+      </div>
+
+      <div class="lib-head lib-grid">
+        <div class="col-check"></div><div class="col-title">Title</div><div class="col-owner">Owner</div><div class="col-email">Email</div><div class="col-progress">Completion</div><div class="col-role">Role</div><div class="col-status">Status</div>
+      </div>
+
+      <div class="lib-rows">
+  <article class="lib-row lib-grid">
+    <label class="checkbox"><input type="checkbox"><span></span></label>
+    <div class="title-cell"><span class="avatar avatar--blue">A</span><a href="#" class="piece-link">Ave Maria</a></div>
+    <div class="owner">James Donkor</div>
+    <div class="email">james.donkor@example.com</div>
+    <div class="progress">N/A</div>
+    <div class="role">Admin</div>
+    <div class="status"><span class="badge badge--urgent">Urgent</span></div>
+  </article>
+
+  <article class="lib-row lib-grid">
+    <label class="checkbox"><input type="checkbox"><span></span></label>
+    <div class="title-cell"><span class="avatar avatar--indigo">B</span><a href="#" class="piece-link">Beethoven’s 5th</a></div>
+    <div class="owner">Blythe Schulte</div>
+    <div class="email">blythe@example.com</div>
+    <div class="progress">80%</div>
+    <div class="role">User</div>
+    <div class="status"><span class="badge badge--active">Active</span></div>
+  </article>
+
+  <article class="lib-row lib-grid">
+    <label class="checkbox"><input type="checkbox"><span></span></label>
+    <div class="title-cell"><span class="avatar avatar--red">C</span><a href="#" class="piece-link">Charlie Parker — Koko</a></div>
+    <div class="owner">James Donkor</div>
+    <div class="email">james.donkor@example.com</div>
+    <div class="progress">N/A</div>
+    <div class="role">Admin</div>
+    <div class="status"><span class="badge badge--warn">Warning</span></div>
+  </article>
+
+  <article class="lib-row lib-grid">
+    <label class="checkbox"><input type="checkbox"><span></span></label>
+    <div class="title-cell"><span class="avatar avatar--green">M</span><a href="#" class="piece-link">Mixolydian Scales</a></div>
+    <div class="owner">Gabriel Jasmin</div>
+    <div class="email">gabriel.jasmin@example.com</div>
+    <div class="progress">40%</div>
+    <div class="role">User</div>
+    <div class="status"><span class="badge badge--active">Active</span></div>
+  </article>
+
+  <article class="lib-row lib-grid">
+    <label class="checkbox"><input type="checkbox"><span></span></label>
+    <div class="title-cell"><span class="avatar avatar--orange">M</span><a href="#" class="piece-link">Mars — The Planets</a></div>
+    <div class="owner">James Donkor</div>
+    <div class="email">james.donkor@example.com</div>
+    <div class="progress">N/A</div>
+    <div class="role">Admin</div>
+    <div class="status"><span class="badge badge--active">Active</span></div>
+  </article>
+
+  <article class="lib-row lib-grid">
+    <label class="checkbox"><input type="checkbox"><span></span></label>
+    <div class="title-cell"><span class="avatar avatar--teal">M</span><a href="#" class="piece-link">Mary Had A Little…</a></div>
+    <div class="owner">Blythe Schulte</div>
+    <div class="email">blythe@example.com</div>
+    <div class="progress">20%</div>
+    <div class="role">User</div>
+    <div class="status"><span class="badge badge--active">Active</span></div>
+  </article>
+
+  <article class="lib-row lib-grid">
+    <label class="checkbox"><input type="checkbox"><span></span></label>
+    <div class="title-cell"><span class="avatar avatar--pink">L</span><a href="#" class="piece-link">Love on Top SATB</a></div>
+    <div class="owner">mpepperall6</div>
+    <div class="email">mpepperall6@example.com</div>
+    <div class="progress">N/A</div>
+    <div class="role">Admin</div>
+    <div class="status"><span class="badge badge--active">Active</span></div>
+  </article>
+
+  <article class="lib-row lib-grid">
+    <label class="checkbox"><input type="checkbox"><span></span></label>
+    <div class="title-cell"><span class="avatar avatar--slate">D</span><a href="#" class="piece-link">Donna Lee</a></div>
+    <div class="owner">esrutton7</div>
+    <div class="email">esrutton7@example.com</div>
+    <div class="progress">40%</div>
+    <div class="role">User</div>
+    <div class="status"><span class="badge badge--active">Active</span></div>
+  </article>
+</div>
+
+    </div>
+  </div>
+
+  <!-- Standalone shell -->
+  <div class="standalone-shell">
+    <aside class="sidebar">
+      <div class="nav-header">Navigation <button class="color-picker" title="Theme color"></button></div>
+      <div class="nav-section">
+        <a class="nav-item" href="home.html" target="_self"><span>📊</span><span>Dashboard</span><span class="badge">3</span></a>
+        <a class="nav-item active" href="library.html" target="_self"><span>📁</span><span>Score Library</span></a>
+        <a class="nav-item" href="practice.html" target="_self"><span>📁</span><span>Practice</span></a>
+        <a class="nav-item" href="settings.html" target="_self"><span>⚙️</span><span>Settings</span></a>
+                </button>
+          <a class="nav-item" href="about.html" target="_self">
+          <span aria-hidden="true">ℹ️</span><span>About</span>
+          </a>
+      </div>
+      <div class="recents-header">Recents</div>
+      <div class="nav-section">
+        <a class="nav-item" href="home.html#ave-maria" target="_self"><span>📁</span><span>Ave Maria SATB</span></a>
+        <a class="nav-item" href="home.html#claire" target="_self"><span>📁</span><span>Claire de Lune - Piano Recital</span></a>
+        <a class="nav-item" href="home.html#beethoven" target="_self"><span>📁</span><span>Beethoven's 5th</span></a>
+      </div>
+      <div class="calibration-tooltip">Try our voice/instrument calibration engine!<div class="calibration-icon"></div></div>
+      <div class="user-profile"><div class="user-avatar"></div><div><div style="font-weight:600;font-size:14px;">Blythe Schulte</div></div></div>
+    </aside>
+
+    <main class="main-content">
+    
+      <div class="page-wrapper"></div>
+    </main>
+  </div>
+
+  <script>
+    if (window.top === window.self) {
+      document.body.classList.add('standalone');
+      const embedded = document.querySelector('.embedded-content .page-wrapper');
+      const target = document.querySelector('.standalone-shell .page-wrapper');
+      if (embedded && target) target.innerHTML = embedded.innerHTML;
+    }
+  </script>
+
+  <script>
+  (function(){
+    const KEY = 'rr_active_group';
+    const groupEl = document.querySelector('.active-group');
+    const avatars = document.querySelectorAll('.member-avatar[data-group]');
+
+    function label(name){ return 'Active Group: ' + name; }
+
+
+    const stored = localStorage.getItem(KEY);
+    if (stored && groupEl) groupEl.textContent = label(stored);
+
+
+    avatars.forEach(av => {
+      av.style.cursor = 'pointer';
+      av.addEventListener('click', () => {
+        const name = av.dataset.group;
+        localStorage.setItem(KEY, name);
+        if (groupEl) groupEl.textContent = label(name);
+
+        av.animate([{transform:'scale(1)'},{transform:'scale(1.1)'},{transform:'scale(1)'}], {duration:180});
+      });
+    });
+
+   
+    window.addEventListener('storage', (e) => {
+      if (e.key === KEY && groupEl) groupEl.textContent = label(e.newValue || 'UMD Acapella');
+    });
+  })();
+</script>
+
+</body>
+</html>
