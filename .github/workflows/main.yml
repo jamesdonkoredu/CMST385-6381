@@ -8,20 +8,12 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      # optional: keeps the root URL live and sends visitors to /project4/
-      - name: Create root index redirect to /project4/
-        run: |
-          echo '<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=/project4/">' > index.html
-
-      - name: Deploy to Azure Web App
+      - name: Deploy using publish profile
         uses: azure/webapps-deploy@v3
         with:
-          app-name: cmst385-jdonkor2                
-          slot-name: production
-          publish-profile: ${{ secrets.APPSERVICECMST385 }}  
-          package: .                                 
+          app-name: CMST385-UMGC-jdonkor2
+          publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
+          package: .
