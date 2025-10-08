@@ -8,19 +8,20 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repo
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Create root redirect to /project4/
+      # optional: keeps the root URL live and sends visitors to /project4/
+      - name: Create root index redirect to /project4/
         run: |
           echo '<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=/project4/">' > index.html
-          ls -la
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: cmst385-jdonkor2         
+          app-name: cmst385-jdonkor2                
           slot-name: production
-          publish-profile: ${{ secrets.APPSERVICECMST385 }}
-          package: .                          
+          publish-profile: ${{ secrets.APPSERVICECMST385 }}  
+          package: .                                 
