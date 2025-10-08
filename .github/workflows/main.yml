@@ -1,25 +1,33 @@
-name: Deploy HTML Files to AppService - CMST385
+name: Deploy Project4 to Azure Web App
 
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'project4/**'
+      - '.github/workflows/deploy-project4.yml'
   workflow_dispatch:
 
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest  
+  deploy:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-    
-      - name: Create root index redirect 
+      # Make the site root bounce to /project4/
+      - name: Create root index redirect
         run: |
-          echo '<!doctype html><meta http-equiv="refresh" content="0; url=/project1/">' > index.html
+          echo '<!doctype html><meta http-equiv="refresh" content="0; url=/project4/">' > index.html
 
-      - name: Deploy entire repo to Azure Web App
+      # Guardrail: ensure /project4 has its own index.html
+      - name: Verify project4 entry point exists
+        run: |
+          test -f project4/index.html || (echo "::error ::project4/index.html is missing"; exit 1)
+
+      - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: CMST385-jdonkor2
-          slot-name: production
           publish-profile: ${{ secrets.APPSERVICECMST385 }}
+          app-name: cmst385-jdonkor2   # use your exact App Service name (lowercase usually)
+          slot-name: production
           package: .
