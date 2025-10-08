@@ -9,10 +9,30 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4name: Deploy site to Azure App Service
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v4
 
-      # Root redirect to /project4/ so visiting the base URL works
-      # Remove this step if you already have a custom root index.html
+      - name: Create root index redirect
+        run: |
+          echo '<!doctype html><meta http-equiv="refresh" content="0; url=/project4/">' > index.html
+          ls -la
+
+      - name: Deploy using publish profile
+        uses: azure/webapps-deploy@v3
+        with:
+          publish-profile: ${{ secrets.APPSERVICECMST385 }}
+          package: .
+
       - name: Create root redirect to /project4/
         run: |
           echo '<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=/project4/">' > index.html
@@ -20,7 +40,7 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: cmst385-jdonkor2          # must match your App Service name
+          app-name: cmst385-jdonkor2        
           slot-name: production
           publish-profile: ${{ secrets.APPSERVICECMST385 }}
           package: .
